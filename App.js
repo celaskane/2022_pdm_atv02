@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 export default class App extends React.Component{
   constructor(props){
     super(props);
@@ -26,8 +32,12 @@ export default class App extends React.Component{
         <Button
           title="OK"
           onPress={() => {
-            this.setState({n1: this.state.n1 + 1})
-            this.setState({n2: this.state.n2 +2})
+            this.setState({n1: getRandomInt(1, 60)})
+            this.setState({n2: getRandomInt(1, 60)})
+            this.setState({n3: getRandomInt(1, 60)})
+            this.setState({n4: getRandomInt(1, 60)})
+            this.setState({n5: getRandomInt(1, 60)})
+            this.setState({n6: getRandomInt(1, 60)})
           }}
         />
       </View>
