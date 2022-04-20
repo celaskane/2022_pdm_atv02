@@ -11,7 +11,6 @@ export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      texto: "Texto inicial",
       n1: 0,
       n2: 0,
       n3: 0,
@@ -29,15 +28,32 @@ export default class App extends React.Component{
         <Text>{this.state.n4}</Text>
         <Text>{this.state.n5}</Text>
         <Text>{this.state.n6}</Text>
+        <p/>
         <Button
-          title="OK"
+          title="Sorteio Megasena"
           onPress={() => {
-            this.setState({n1: getRandomInt(1, 60)})
-            this.setState({n2: getRandomInt(1, 60)})
-            this.setState({n3: getRandomInt(1, 60)})
-            this.setState({n4: getRandomInt(1, 60)})
-            this.setState({n5: getRandomInt(1, 60)})
-            this.setState({n6: getRandomInt(1, 60)})
+            this.setState({
+              n1: getRandomInt(1, 61),
+              n2: getRandomInt(1, 61),
+              n3: getRandomInt(1, 61),
+              n4: getRandomInt(1, 61),
+              n5: getRandomInt(1, 61),
+              n6: getRandomInt(1, 61)
+            })
+          }}
+        />
+        <p/>
+        <Button
+          title="Limpar"
+          onPress={() => {
+            this.setState({
+              n1: 0,
+              n2: 0,
+              n3: 0,
+              n4: 0,
+              n5: 0,
+              n6: 0
+            })
           }}
         />
       </View>
